@@ -1,0 +1,82 @@
+/*background*/
+a {
+    color: inherit;
+}
+button{
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.wrapper {
+    background: #F2F2F2;
+    font-size: 20px;
+    height: 100vh;
+    position: relative;
+}
+
+/*section(일정 관리, 입력창)*/
+
+section.main {
+    width: 600px;
+    height: 450px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+section.main h2 {
+    font-size: 35px;
+    background: #99B7F9;
+    color: #ffffff;
+    padding: 33px 30px;
+    text-align: center;
+}
+
+/*ul todo-list*/
+ul.todo-list span {
+    margin-left: 10px;
+}
+.input{
+    background: #829FD9;
+    height: 41px;
+    text-align: center;   
+}
+
+.input input{
+   border: none;
+   background: transparent;
+   outline-style: none;
+   width: 90%;
+}
+
+button #enter {
+    outline-style: none;
+    width: 10%;
+}
+
+
+
+/*todo-list (할 일)*/
+ul.todo-list li{
+    display: flex;
+    margin: 25px;
+}
+
+ul.todo-list span {
+    width: 85%;
+}
+
+ul.todo-list div{
+    margin-right: 20px; 
+}
+
+/**/
+
