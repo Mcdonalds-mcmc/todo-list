@@ -81,7 +81,7 @@ section.main h2 {
 /*todo-list (할 일)*/
 ul.todo-list li{
     display: flex;
-    margin: 25px;
+    margin: 25px 0 25px 25px;
 }
 
 ul.todo-list .text {
@@ -92,7 +92,8 @@ ul.todo-list .text {
 }
 
 ul.todo-list .lnr{
-    margin-right: 20px; 
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 /*li */

@@ -16,6 +16,7 @@ document.querySelector('.todo-list').addEventListener('click', e => {
             e.target.classList.replace('lnr-checkmark-circle', 'lnr-undo'); //수정아이콘 변경
             e.target.classList.replace('modify', 'ok'); //수정버튼의 클래스 확인으로 변경
             e.target.nextElementSibling.classList.replace('delete', 'cancel'); //삭제버튼의 클래스 취소로 변경
+            e.target.previousElementSibling.focus();//인풋으로 포커스
         }
         //수정확인
     } else if (e.target.matches('.ok')) {
