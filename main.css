@@ -1,6 +1,11 @@
 .hide {
     display: none;
 }
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
 /*background*/
 a {
     color: inherit;
@@ -9,8 +14,8 @@ button{
     background: none;
     border: none;
     color: #ffffff;
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 25px;
+    padding: 0;
 }
 
 .wrapper {
@@ -45,9 +50,6 @@ section.main h2 {
 }
 
 /*ul todo-list*/
-ul.todo-list span {
-    margin-left: 10px;
-}
 .input{
     background: #829FD9;
     height: 41px;
@@ -58,12 +60,20 @@ ul.todo-list span {
    border: none;
    background: transparent;
    outline-style: none;
-   width: 90%;
+   width: 80%;
+   color: #ffffff;
+   font-size: 20px;
+   float: left;
+   line-height: 41px;
+   margin-left: 5px;
 }
 
-button #enter {
+#enter {
+    float: right;
     outline-style: none;
     width: 10%;
+    height: 41px;
+    cursor: pointer;
 }
 
 
@@ -74,13 +84,27 @@ ul.todo-list li{
     margin: 25px;
 }
 
-ul.todo-list span {
+ul.todo-list .text {
     width: 85%;
+    font-size: 20px;
+    margin-left: 10px;
+    border: 0;
 }
 
-ul.todo-list div{
+ul.todo-list .lnr{
     margin-right: 20px; 
 }
 
-/**/
+/*li */
 
+li span.modify, li span.ok {
+    color: green;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+li span.delete, li span.cancel {
+    color: red;
+    cursor: pointer;
+    font-size: 25px;
+}
