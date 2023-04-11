@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 .hide {
     display: none;
 }
-=======
 /*background*/
 a {
     color: inherit;
@@ -25,6 +23,7 @@ button{
 /*section(일정 관리, 입력창)*/
 
 section.main {
+    border-radius: 8px;
     width: 600px;
     height: 450px;
     background: #ffffff;
@@ -85,4 +84,3 @@ ul.todo-list div{
 
 /**/
 
->>>>>>> css
