@@ -79,6 +79,12 @@ section.main h2 {
 
 
 /*todo-list (할 일)*/
+ul.todo-list {
+    width: 600px;
+    height: 300px;
+    overflow: auto;
+}
+
 ul.todo-list li{
     display: flex;
     margin: 25px 0 25px 25px;
@@ -108,4 +114,23 @@ li span.delete, li span.cancel {
     color: red;
     cursor: pointer;
     font-size: 25px;
+}
+
+/* 삭제 모션 */
+ul.todo-list li.delMoving {
+    animation: delMove 1.5s ease-in-out;
+}
+@keyframes delMove {
+    0% {
+        background: orange;
+        transform: translateX(20px);
+    }
+    50% {
+        background: orangered;
+        transform: translateX(-500px);
+    } 
+    100% {
+        background: red;
+        transform: translateX(-2000px);
+    }
 }

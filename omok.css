@@ -1,0 +1,27 @@
+/* 판 */
+
+.main {
+    position: relative;
+    width: 750px;
+    height: 750px;
+    margin: 100px auto;
+}
+
+.main div {
+    width: 50px;
+    height: 50px;
+    background: #0b0b0b;
+    float: left;
+    cursor: pointer;
+}
+
+.main div:nth-child(2n) {
+    background: #fff;
+}
+
+.main div img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 5px auto;
+}
