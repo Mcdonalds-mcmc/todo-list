@@ -1,10 +1,20 @@
 .opac {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .hide {
     display: none;
 }
 
+.outer {
+    position: relative;
+    width: 750px;
+    height: 750px;
+    margin: 0 auto;
+}
+
+.clicked {
+    border: 2px solid red;
+}
 
 /* 판 */
 
@@ -60,7 +70,7 @@
     height: 800px;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 70%;
     transform: translate(-50%, -50%);
     z-index: 10;
     font-family: 'Shilla_Culture';

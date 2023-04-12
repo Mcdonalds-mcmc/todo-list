@@ -21,37 +21,33 @@ let arr = [
 //승패검사 함수
 function checkWin(bw) {
     //좌우승패
-    for(let i=0; i<15; i++) {
-        for(let j=0; j<11; j++) {
-            if(arr[i][j] === bw && arr[i][j+1] === bw && arr[i][j+2] === bw && arr[i][j+3] === bw && arr[i][j+4] === bw) {
-                console.log('수평승!');
+    for (let i = 0; i < 15; i++) {
+        for (let j = 0; j < 11; j++) {
+            if (arr[i][j] === bw && arr[i][j + 1] === bw && arr[i][j + 2] === bw && arr[i][j + 3] === bw && arr[i][j + 4] === bw) {
                 return true;
             }
         }
     }
     //상하승패
-    for(let i=0; i<11; i++) {
-        for(let j=0; j<15; j++) {
-            if(arr[i][j] === bw && arr[i+1][j] === bw && arr[i+2][j] === bw && arr[i+3][j] === bw && arr[i+4][j] === bw) {
-                console.log('수직승!');
+    for (let i = 0; i < 11; i++) {
+        for (let j = 0; j < 15; j++) {
+            if (arr[i][j] === bw && arr[i + 1][j] === bw && arr[i + 2][j] === bw && arr[i + 3][j] === bw && arr[i + 4][j] === bw) {
                 return true;
             }
         }
     }
     //대각선오른쪽아래방향승패
-    for(let i=0; i<11; i++) {
-        for(let j=0; j<11; j++) {
-            if(arr[i][j] === bw && arr[i+1][j+1] === bw && arr[i+2][j+2] === bw && arr[i+3][j+3] === bw && arr[i+4][j+4] === bw) {
-                console.log('오른쪽아래승!');
+    for (let i = 0; i < 11; i++) {
+        for (let j = 0; j < 11; j++) {
+            if (arr[i][j] === bw && arr[i + 1][j + 1] === bw && arr[i + 2][j + 2] === bw && arr[i + 3][j + 3] === bw && arr[i + 4][j + 4] === bw) {
                 return true;
             }
         }
     }
     //대각선왼쪽아래방향승패
-    for(let i=0; i<11; i++) {
-        for(let j=5; j<=15; j++) {
-            if(arr[i][j] === bw && arr[i+1][j-1] === bw && arr[i+2][j-2] === bw && arr[i+3][j-3] === bw && arr[i+4][j-4] === bw) {
-                console.log('왼쪽아래승!');
+    for (let i = 0; i < 11; i++) {
+        for (let j = 5; j <= 15; j++) {
+            if (arr[i][j] === bw && arr[i + 1][j - 1] === bw && arr[i + 2][j - 2] === bw && arr[i + 3][j - 3] === bw && arr[i + 4][j - 4] === bw) {
                 return true;
             }
         }
@@ -79,8 +75,8 @@ $main.addEventListener('click', e => {
 
     // 승패검사
     if (checkWin(cnt % 2)) {
-        if(cnt%2 === 1) {
-        alert('흑돌 승리!');
+        if (cnt % 2 === 1) {
+            alert('흑돌 승리!');
         } else {
             alert('백돌 승리!');
         }
@@ -105,4 +101,3 @@ const $closeBtn = document.querySelector('.close-btn');
 $closeBtn.addEventListener('click', () => {
     document.getElementById('explain').classList.add('hide');
 });
-

@@ -67,6 +67,9 @@ section.main h2 {
    line-height: 41px;
    margin-left: 5px;
 }
+.input input::placeholder{
+    color: white;
+}
 
 #enter {
     float: right;
