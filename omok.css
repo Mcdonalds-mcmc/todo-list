@@ -59,28 +59,40 @@
     height: 800px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%);
     z-index: 10;
 }
 
+.title {
+    background: url(./img/title.png) no-repeat;
+    background-size: contain;
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .start div {
-    background: #c8c8c8;
     width: 300px;
     height: 100px;
-    border-radius: 30px;
-    border: 3px solid #fff;
     text-align: center;
     line-height: 100px;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 700;
     cursor: pointer;
     margin-left: 250px;
     margin-top: 250px;
 }
 
+.start div:hover {
+    font-size: 70px;
+}
+
 .start div:last-child {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 #explain {
