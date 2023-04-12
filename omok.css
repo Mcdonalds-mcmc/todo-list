@@ -1,27 +1,123 @@
+.opac {
+    opacity: 0.5;
+}
+.hide {
+    display: none;
+}
+
 /* 판 */
 
 .main {
     position: relative;
     width: 750px;
     height: 750px;
-    margin: 100px auto;
+    margin: 125px auto;
+}
+
+.main::after {
+    content: '';
+    background: yellow url(./img/intaglio.jpg) no-repeat;
+    background-size: cover;
+    width: 970px;
+    height: 970px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.main::before {
+    content: '';
+    border: 5px solid #000;
+    width: 750px;
+    height: 750px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 .main div {
     width: 50px;
     height: 50px;
-    background: #0b0b0b;
     float: left;
     cursor: pointer;
 }
 
-.main div:nth-child(2n) {
-    background: #fff;
-}
-
 .main div img {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 43px;
+    height: 43px;
     margin: 5px auto;
+}
+
+/* 게임시작메뉴 */
+.start {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.start div {
+    background: #c8c8c8;
+    width: 300px;
+    height: 100px;
+    border-radius: 30px;
+    border: 3px solid #fff;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 250px;
+    margin-top: 250px;
+}
+
+.start div:last-child {
+    margin-top: 100px;
+}
+
+#explain {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    background: #c8c8c8;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#explain h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 30px auto;
+}
+
+#explain p {
+    font-size: 25px;
+}
+
+#explain .close-btn {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 50px;
+    background: #5a5a5a;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 50px;
+    cursor: pointer;
+    border: 2px solid #fff;
 }

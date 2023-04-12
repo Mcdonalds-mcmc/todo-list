@@ -24,6 +24,7 @@ function checkWin(bw) {
     for(let i=0; i<15; i++) {
         for(let j=0; j<11; j++) {
             if(arr[i][j] === bw && arr[i][j+1] === bw && arr[i][j+2] === bw && arr[i][j+3] === bw && arr[i][j+4] === bw) {
+                console.log('수평승!');
                 return true;
             }
         }
@@ -32,6 +33,7 @@ function checkWin(bw) {
     for(let i=0; i<11; i++) {
         for(let j=0; j<15; j++) {
             if(arr[i][j] === bw && arr[i+1][j] === bw && arr[i+2][j] === bw && arr[i+3][j] === bw && arr[i+4][j] === bw) {
+                console.log('수직승!');
                 return true;
             }
         }
@@ -39,7 +41,8 @@ function checkWin(bw) {
     //대각선오른쪽아래방향승패
     for(let i=0; i<11; i++) {
         for(let j=0; j<11; j++) {
-            if(arr[i][j] === bw && arr[i+1][j] === bw && arr[i+2][j+2] === bw && arr[i+3][j+3] === bw && arr[i+4][j+4] === bw) {
+            if(arr[i][j] === bw && arr[i+1][j+1] === bw && arr[i+2][j+2] === bw && arr[i+3][j+3] === bw && arr[i+4][j+4] === bw) {
+                console.log('오른쪽아래승!');
                 return true;
             }
         }
@@ -48,6 +51,7 @@ function checkWin(bw) {
     for(let i=0; i<11; i++) {
         for(let j=5; j<=15; j++) {
             if(arr[i][j] === bw && arr[i+1][j-1] === bw && arr[i+2][j-2] === bw && arr[i+3][j-3] === bw && arr[i+4][j-4] === bw) {
+                console.log('왼쪽아래승!');
                 return true;
             }
         }
@@ -77,3 +81,23 @@ $main.addEventListener('click', e => {
         }
     }
 });
+
+// 게임시작버튼 이벤트
+const $gameStart = document.getElementById('game-start');
+$gameStart.addEventListener('click', e => {
+    document.querySelector('.main').classList.remove('opac'); //판 투명도 제거
+    document.querySelector('.start').classList.add('hide'); // 시작메뉴 제거
+});
+
+// 게임설명버튼 이벤트
+const $explainBtn = document.getElementById('explain-btn');
+$explainBtn.addEventListener('click', () => {
+    document.getElementById('explain').classList.remove('hide');
+});
+
+// 설명창 닫기 버튼 이벤트
+const $closeBtn = document.querySelector('.close-btn');
+$closeBtn.addEventListener('click', () => {
+    document.getElementById('explain').classList.add('hide');
+});
+
