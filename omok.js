@@ -69,6 +69,11 @@ $main.addEventListener('click', e => {
     e.target.innerHTML += `<img src="./img/stone${cnt%2}.png" alt="stone">`;
     e.target.classList.add(`stone${cnt%2}`);
 
+    //오목 소리
+    let sound = document.getElementById('omok_sound');
+    sound.volume = 1;
+    sound.play();
+
     // 배열의 값 변경
     arr[e.target.dataset.y][e.target.dataset.x] = cnt % 2;
 
