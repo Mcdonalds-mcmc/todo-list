@@ -39,15 +39,15 @@ function checkWin(bw) {
     //대각선오른쪽아래방향승패
     for(let i=0; i<11; i++) {
         for(let j=0; j<11; j++) {
-            if(arr[i][j] === bw && arr[i+1][j+] === bw && arr[i+2][j+2] === bw && arr[i+3][j+3] === bw && arr[i+4][j+4] === bw) {
+            if(arr[i][j] === bw && arr[i+1][j] === bw && arr[i+2][j+2] === bw && arr[i+3][j+3] === bw && arr[i+4][j+4] === bw) {
                 return true;
             }
         }
     }
     //대각선왼쪽아래방향승패
     for(let i=0; i<11; i++) {
-        for(let j=0; j<11; j++) {
-            if(arr[i][j] === bw && arr[i+1][j+] === bw && arr[i+2][j+2] === bw && arr[i+3][j+3] === bw && arr[i+4][j+4] === bw) {
+        for(let j=5; j<=15; j++) {
+            if(arr[i][j] === bw && arr[i+1][j-1] === bw && arr[i+2][j-2] === bw && arr[i+3][j-3] === bw && arr[i+4][j-4] === bw) {
                 return true;
             }
         }
