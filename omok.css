@@ -12,10 +12,6 @@
     margin: 0 auto;
 }
 
-.clicked {
-    border: 2px solid red;
-}
-
 /* 판 */
 
 .main {
@@ -109,25 +105,36 @@
 
 #explain {
     position: absolute;
-    width: 400px;
+    width: 500px;
     height: 600px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 50px 50px 10px rgba(0, 0, 0, 0.5);
     z-index: 15;
+    border-radius: 5px;
     background: #c8c8c8;
-    border-radius: 30px;
+    background-image: url('./img/한지.jpg');
+    
     text-align: center;
 }
 
 #explain h1 {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 700;
+    font-family: 'Shilla_Culture';
     margin: 30px auto;
 }
 
 #explain p {
     font-size: 25px;
+    line-height: 80px;
+    font-family: 'Shilla_Culture';
+}
+#explain div p {
+    line-height: 100px;
+    font-size: 18px;
+    
 }
 
 #explain .close-btn {
@@ -140,6 +147,7 @@
     background: #5a5a5a;
     border-radius: 20px;
     font-size: 20px;
+    font-family: 'Shilla_Culture';
     color: #fff;
     line-height: 50px;
     cursor: pointer;
