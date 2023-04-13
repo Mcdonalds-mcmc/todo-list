@@ -78,13 +78,13 @@ $main.addEventListener('click', e => {
     cnt++;
 
     // 흑돌일 경우 33검사
-    if (cnt % 2 === 1) {
-        if (checkThreeThree(cnt % 2, e.target.dataset.x, e.target.dataset.y)) {
-            cnt--;
-            alert('33은 금지입니다.');
-            return;
-        }
-    }
+    // if (cnt % 2 === 1) {
+    //     if (checkThreeThree(cnt % 2, e.target.dataset.x, e.target.dataset.y)) {
+    //         cnt--;
+    //         alert('33은 금지입니다.');
+    //         return;
+    //     }
+    // }
 
     // 클래스에 stone1, 0 추가와 이미지 삽입
     e.target.innerHTML += `<img src="./img/stone${cnt%2}.png" alt="stone">`;
@@ -105,6 +105,8 @@ $main.addEventListener('click', e => {
         } else {
             alert('백돌 승리!');
         }
+        // 게임끝날 시 클릭 되지 않게 finish 투명판 생기는 메서드
+        document.getElementById('finish').classList.remove('hide');
     }
 });
 
