@@ -81,6 +81,18 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    animation: updown 2s infinite linear alternate;
+}
+
+/* title 애니메이션 */
+@keyframes updown {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 5%;
+    }
 }
 
 .start div {
@@ -132,14 +144,15 @@
     font-family: 'Shilla_Culture';
 }
 #explain div p {
-    line-height: 100px;
+    margin-top: 20px;
+    line-height: 15px;
     font-size: 18px;
     
 }
 
 #explain .close-btn {
     position: absolute;
-    top: 90%;
+    top: 88%;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -153,3 +166,9 @@
     cursor: pointer;
     border: 2px solid #fff;
 }
+
+#explain .close-btn:hover {
+    background-color: #c8c8c8;
+    color: #000;
+}
+

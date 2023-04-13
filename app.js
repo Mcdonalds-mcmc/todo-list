@@ -1,8 +1,57 @@
+// input 이벤트
+const $form = document.querySelector('form');
+const $input = document.querySelector('input');
+const $ul = document.querySelector('ul');
+
+$form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    if ($input.value.trim() !== '') {
+        const todo = `
+                           <li>
+                           <input type="checkbox">
+                           <span class="text">${$input.value.trim()}</span>
+                           <span class="lnr lnr-checkmark-circle modify"></span>
+                           <span class="lnr lnr-cross-circle delete"></span>
+                           </li>
+                           `;
+
+        $ul.insertAdjacentHTML('beforeend', todo);
+        $input.value = '';
+
+    } else {
+        $input.setAttribute('placeholder', '필수값을 입력해주세요.!!');
+        $input.classList.add('input-error');
+        $input.focus();
+        $input.addEventListener('keydown', () => {
+            $input.classList.remove('input-error');
+        });
+        $input.addEventListener('click', () => {
+            $input.classList.remove('input-error');
+            $input.setAttribute('placeholder', '할 일을 입력해주세요.!!');
+        });
+
+    }
+
+    $ul.addEventListener('click', e => {
+        const $target = e.target
+        if ($target.classList.contains('modfy')) {
+            const $text = $target.previousElementSibling;
+            const $newText = prompt('새로운 할 일을 입력하세요.', $text.textContent);
+            if ($newText !== null && $newText.trim() === '') {
+                $text.textContent = $text.trim()
+            }
+
+        }
+    })
+});
+
 //todo-list 이벤트
 document.querySelector('.todo-list').addEventListener('click', e => {
     //삭제
     if (e.target.matches('.delete')) {
         if (e.target.previousElementSibling.previousElementSibling.previousElementSibling.checked) {
+            e.target.parentNode.classList.add('delMoving');
             e.target.parentNode.remove();
         }
         //수정
@@ -36,8 +85,8 @@ document.querySelector('.todo-list').addEventListener('click', e => {
     }
 });
 
-document.getElementById('enter').addEventListener('click', () => {
-    const $input = document.querySelector('.input input');
-    document.querySelector('.todo-list').insertAdjacentHTML('beforeend', `<li><input type="checkbox"><span class="text">${$input.value}</span><span class="lnr lnr-checkmark-circle modify"></span><span class="lnr lnr-cross-circle delete"></span></li>`);
-    $input.value = '';
-});
+// document.getElementById('enter').addEventListener('click', () => {
+//     const $input = document.querySelector('.input input');
+//     document.querySelector('.todo-list').insertAdjacentHTML('beforeend', `<li><input type="checkbox"><span class="text">${$input.value}</span><span class="lnr lnr-checkmark-circle modify"></span><span class="lnr lnr-cross-circle delete"></span></li>`);
+//     $input.value = '';
+// });

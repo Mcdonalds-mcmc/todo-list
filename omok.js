@@ -18,6 +18,21 @@ let arr = [
     [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 ];
 
+//삼삼검사 함수
+function checkThreeThree(currentX, currentY) {
+    console.log(currentX);
+    console.log(currentY);
+    // 십자삼삼
+    if (currentX > 1 && currentY > 1 && currentX < 13 && currentY < 13) {
+        if (arr[currentX - 1][currentY] === 1 && arr[currentX + 1][currentY] === 1 && arr[currentX][currentY - 1] === 1 && arr[currentX][currentY + 1] === 1 &&
+            arr[currentX - 2][currentY] === -1 && arr[currentX + 2][currentY] === -1 && arr[currentX][currentY - 2] === -1 && arr[currentX][currentY + 2] === -1) {
+            return true;
+        }
+    }
+    // X자삼삼
+
+}
+
 //승패검사 함수
 function checkWin(bw) {
     //좌우승패
@@ -61,6 +76,16 @@ $main.addEventListener('click', e => {
     if (e.target.classList.contains('stone1') || e.target.classList.contains('stone0')) return; //이미 돌이 놓여져있으면 리턴
 
     cnt++;
+
+    // 흑돌일 경우 33검사
+    if (cnt % 2 === 1) {
+        if (checkThreeThree(cnt % 2, e.target.dataset.x, e.target.dataset.y)) {
+            cnt--;
+            alert('33은 금지입니다.');
+            return;
+        }
+    }
+
     // 클래스에 stone1, 0 추가와 이미지 삽입
     e.target.innerHTML += `<img src="./img/stone${cnt%2}.png" alt="stone">`;
     e.target.classList.add(`stone${cnt%2}`);
