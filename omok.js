@@ -98,12 +98,20 @@ $main.addEventListener('click', e => {
     // 배열의 값 변경
     arr[e.target.dataset.y][e.target.dataset.x] = cnt % 2;
 
+    // 빨간선
+    const $white = document.querySelector('.white');
+    const $black = document.querySelector('.black');
+
+    $white.classList.toggle('redline', cnt % 2 === 1);
+    $black.classList.toggle('redline', cnt % 2 === 0);
+
     // 승패검사
+    const $cong = document.querySelector('.congratulation');
     if (checkWin(cnt % 2)) {
         if (cnt % 2 === 1) {
-            alert('흑돌 승리!');
+            $cong.textContent = '흑돌 승리!!'
         } else {
-            alert('백돌 승리!');
+            $cong.textContent = '백돌 승리!!'
         }
         // 게임끝날 시 클릭 되지 않게 finish 투명판 생기는 메서드
         document.getElementById('finish').classList.remove('hide');
@@ -115,6 +123,8 @@ const $gameStart = document.getElementById('game-start');
 $gameStart.addEventListener('click', e => {
     document.querySelector('.main').classList.remove('opac'); //판 투명도 제거
     document.querySelector('.start').classList.add('hide'); // 시작메뉴 제거
+    document.querySelector('.black').classList.remove('hide');
+    document.querySelector('.white').classList.remove('hide');
 });
 
 // 게임설명버튼 이벤트
@@ -127,4 +137,10 @@ $explainBtn.addEventListener('click', () => {
 const $closeBtn = document.querySelector('.close-btn');
 $closeBtn.addEventListener('click', () => {
     document.getElementById('explain').classList.add('hide');
+});
+
+// 승리창 닫기 이벤트
+const $cong = document.querySelector('.congratulation');
+$cong.addEventListener('click', e => {
+    e.target.classList.add('hide');
 });

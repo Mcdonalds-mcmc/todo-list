@@ -3,11 +3,15 @@ a {
     text-decoration: none;
 }
 
+/* 이벤트 */
 .opac {
     opacity: 0.3;
 }
 .hide {
     display: none;
+}
+.redline {
+    border: 10px solid red;
 }
 
 .outer {
@@ -195,4 +199,51 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#reset {
+    position: absolute;
+    top: 50%;
+    right: -40%;
+    transform: translate(-50%,-50%);
+    font-family: 'Shilla_Culture';
+    font-size: 50px;
+    font-weight: 700;
+}
+
+#reset:hover {
+    font-size: 70px;
+}
+
+.white {
+    position: absolute;
+    top: -10%;
+    left: -35%;
+    border-radius: 50%;
+}
+
+.black {
+    position: absolute;
+    bottom: -10%;
+    right: -35%;
+    border-radius: 50%;
+}
+
+.congratulation {
+    width: 1000px;
+    height: 400px;
+    background-image: url('./img/한지.jpg');
+    border-radius: 5px;
+    text-align: center;
+    line-height: 400px;
+    font-size: 100px;
+    font-weight: 700;
+    font-family: 'Shilla_Culture';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0 0 5px #000;
+    animation: explain 0.8s forwards;
 }
