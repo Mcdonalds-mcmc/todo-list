@@ -1,6 +1,10 @@
 .hide {
     display: none;
 }
+.checked {
+    color: lightgray;
+    text-decoration: line-through;
+}
 .clearfix::after {
     content: '';
     display: block;
@@ -110,7 +114,7 @@ ul.todo-list {
 ul.todo-list li{
     display: flex;
     margin: 0;
-    padding: 25px 0 0 25px;
+    padding: 10px 0 10px 25px;
 }
 
 ul.todo-list .text {
@@ -118,6 +122,11 @@ ul.todo-list .text {
     font-size: 20px;
     margin-left: 10px;
     border: 0;
+}
+
+ul.todo-list input.text {
+    border: 3px solid #000;
+    border-radius: 5px;
 }
 
 ul.todo-list .lnr{

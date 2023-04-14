@@ -46,13 +46,21 @@ $form.addEventListener('submit', e => {
     })
 });
 
+//check-box 이벤트
+document.querySelector('.todo-list').addEventListener('click', e => {
+    if(!e.target.matches('input[type="checkbox"]')) return;
+    e.target.nextElementSibling.classList.toggle('checked', e.target.checked);
+});
+
 //todo-list 이벤트
 document.querySelector('.todo-list').addEventListener('click', e => {
     //삭제
     if (e.target.matches('.delete')) {
         if (e.target.previousElementSibling.previousElementSibling.previousElementSibling.checked) {
             e.target.parentNode.classList.add('delMoving');
-            e.target.parentNode.remove();
+            setTimeout(() => {
+                e.target.parentNode.remove()
+            }, 500);
         }
         //수정
     } else if (e.target.matches('.modify')) {

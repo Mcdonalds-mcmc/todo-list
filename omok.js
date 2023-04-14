@@ -18,6 +18,7 @@ let arr = [
     [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 ];
 
+const $timer = document.querySelector('.timer');
 //삼삼검사 함수
 function checkThreeThree(currentX, currentY) {
     console.log(currentX);
@@ -26,16 +27,16 @@ function checkThreeThree(currentX, currentY) {
     if (currentX > 1 && currentY > 1 && currentX < 13 && currentY < 13) {
         if (arr[currentX - 1][currentY] === 1 && arr[currentX + 1][currentY] === 1 && arr[currentX][currentY - 1] === 1 && arr[currentX][currentY + 1] === 1 &&
             arr[currentX - 2][currentY] === -1 && arr[currentX + 2][currentY] === -1 && arr[currentX][currentY - 2] === -1 && arr[currentX][currentY + 2] === -1) {
-            return true;
+                return true;
+            }
         }
+        // X자삼삼
+        
     }
-    // X자삼삼
 
-}
-
-//승패검사 함수
-function checkWin(bw) {
-    //좌우승패
+    //승패검사 함수
+    function checkWin(bw) {
+        //좌우승패
     for (let i = 0; i < 15; i++) {
         for (let j = 0; j < 11; j++) {
             if (arr[i][j] === bw && arr[i][j + 1] === bw && arr[i][j + 2] === bw && arr[i][j + 3] === bw && arr[i][j + 4] === bw) {
@@ -74,37 +75,37 @@ const $main = document.querySelector('.main');
 $main.addEventListener('click', e => {
     if (!e.target.matches('.main div')) return; //이벤트 전파
     if (e.target.classList.contains('stone1') || e.target.classList.contains('stone0')) return; //이미 돌이 놓여져있으면 리턴
-
+    
     cnt++;
-
+    
     // 흑돌일 경우 33검사
     // if (cnt % 2 === 1) {
     //     if (checkThreeThree(cnt % 2, e.target.dataset.x, e.target.dataset.y)) {
-    //         cnt--;
+        //         cnt--;
     //         alert('33은 금지입니다.');
     //         return;
     //     }
     // }
-
+    
     // 클래스에 stone1, 0 추가와 이미지 삽입
     e.target.innerHTML += `<img src="./img/stone${cnt%2}.png" alt="stone">`;
     e.target.classList.add(`stone${cnt%2}`);
-
+    
     //오목 소리
     let sound = document.getElementById('omok_sound');
     sound.volume = 1;
     sound.play();
-
+    
     // 배열의 값 변경
     arr[e.target.dataset.y][e.target.dataset.x] = cnt % 2;
-
+    
     // 빨간선
     const $white = document.querySelector('.white');
     const $black = document.querySelector('.black');
-
+    
     $white.classList.toggle('redline', cnt % 2 === 1);
-    $black.classList.toggle('redline', cnt % 2 === 0);
-
+    $black.classList.toggle('redline', cnt % 2 === 0);    
+    
     // 승패검사
     const $cong = document.querySelector('.congratulation');
     if (checkWin(cnt % 2)) {
@@ -115,6 +116,8 @@ $main.addEventListener('click', e => {
         }
         // 게임끝날 시 클릭 되지 않게 finish 투명판 생기는 메서드
         document.getElementById('finish').classList.remove('hide');
+        // 타이머 정지
+        clearInterval(func);
     }
 });
 
@@ -125,6 +128,8 @@ $gameStart.addEventListener('click', e => {
     document.querySelector('.start').classList.add('hide'); // 시작메뉴 제거
     document.querySelector('.black').classList.remove('hide');
     document.querySelector('.white').classList.remove('hide');
+    $timer.classList.remove('hide'); // 타이머 숨김 해제
+    $timer.textContent = 30;
 });
 
 // 게임설명버튼 이벤트

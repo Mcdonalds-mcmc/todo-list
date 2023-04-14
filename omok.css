@@ -14,6 +14,10 @@ a {
     border: 10px solid red;
 }
 
+.wrapper {
+    font-family: 'Shilla_Culture', sans-serif;
+}
+
 .outer {
     position: relative;
     width: 750px;
@@ -78,7 +82,6 @@ a {
     top: 70%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    font-family: 'Shilla_Culture';
 }
 
 .title {
@@ -154,14 +157,12 @@ a {
 #explain h1 {
     font-size: 60px;
     font-weight: 700;
-    font-family: 'Shilla_Culture';
     margin: 30px auto;
 }
 
 #explain p {
     font-size: 25px;
     line-height: 80px;
-    font-family: 'Shilla_Culture';
 }
 #explain div p {
     margin-top: 20px;
@@ -180,7 +181,6 @@ a {
     background: #5a5a5a;
     border-radius: 20px;
     font-size: 20px;
-    font-family: 'Shilla_Culture';
     color: #fff;
     line-height: 50px;
     cursor: pointer;
@@ -206,7 +206,6 @@ a {
     top: 50%;
     right: -40%;
     transform: translate(-50%,-50%);
-    font-family: 'Shilla_Culture';
     font-size: 50px;
     font-weight: 700;
 }
@@ -238,7 +237,6 @@ a {
     line-height: 400px;
     font-size: 100px;
     font-weight: 700;
-    font-family: 'Shilla_Culture';
     position: absolute;
     left: 50%;
     top: 50%;
