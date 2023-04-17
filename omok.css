@@ -64,7 +64,12 @@ a {
     height: 50px;
     float: left;
     cursor: pointer;
+    /* background: white; */
 }
+
+/* .main div:nth-child(2n) {
+    background: black;
+} */
 
 .main div img {
     display: block;
@@ -227,6 +232,8 @@ a {
     right: -35%;
     border-radius: 50%;
 }
+
+/* 게임 승리 */
 
 .congratulation {
     width: 1000px;
